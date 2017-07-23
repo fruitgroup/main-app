@@ -1,12 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Image, View } from 'react-native';
+import { StackNavigator} from 'react-navigation';
+import Tabs from './src/components/tabs/Tabs';
 
-import PageNavigator from './src/components/navigator/PageNavigator'
+const Routes = {
+    Tabs : {
+      name: 'Tabs',
+      description: 'All Tab Items',
+      screen:  Tabs,
+    },
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <PageNavigator />
-    );
+};
+
+const AppNavigator = StackNavigator(
+  {
+    ...Routes,
+    Index: {
+      screen: Tabs,
+    }
+  },
+  {
+    initialRouteName: 'Index',
+    headerMode: 'none',
   }
-}
+
+);
+
+export default () => <AppNavigator /> ;
