@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Login from './src/components/Login/Login'
+import PageNavigator from './src/components/navigator/PageNavigator'
 
 export default class App extends React.Component {
   render() {
     return (
-      <Login />
+      <PageNavigator />
     );
   }
 }
