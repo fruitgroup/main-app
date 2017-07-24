@@ -1,29 +1,36 @@
 import React from 'react';
 import {StyleSheet, TextInput, View, Text, TouchableOpacity} from 'react-native';
+import {StackNavigator} from 'react-navigation'
 
+import Register from './register/Register'
 export default class LoginForm extends React.Component {
+
+  _onRegister = () => {
+    this.props.navigation.navigate('Register')
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <TextInput placeholder="Username or Email" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} returnKeyType="next" style={styles.input} onSubmitEditing={() => this.passwordInput.focus()}/>
-        <TextInput placeholder="Password" returnKeyType="go" style={styles.input} ref={(input) => this.passwordInput = input} secureTextEntry/>
+        <TextInput placeholder="用户名" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} returnKeyType="next" style={styles.input} onSubmitEditing={() => this.passwordInput.focus()}/>
+        <TextInput placeholder="密码" returnKeyType="go" style={styles.input} ref={(input) => this.passwordInput = input} secureTextEntry/>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Register</Text>
+          <TouchableOpacity onPress={this._onRegister} style={styles.button}>
+            <Text style={styles.buttonText}>新用户注册</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Lost Password</Text>
+            <Text style={styles.buttonText}>找回密码</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.quickButton}>
-            <Text style={styles.buttonText}>WeChat</Text>
+            <Text style={styles.buttonText}>微信登陆</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.quickButton}>
-            <Text style={styles.buttonText}>QQ</Text>
+            <Text style={styles.buttonText}>QQ登陆</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.quickButton}>
-            <Text style={styles.buttonText}>Alipay</Text>
+            <Text style={styles.buttonText}>支付宝登陆</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -31,10 +38,22 @@ export default class LoginForm extends React.Component {
   }
 }
 
+export const LoginStack = StackNavigator({
+  LoginForm: {
+    screen: LoginForm,
+  },
+  Register: {
+    screen: Register,
+    navigationOptions: {
+      title: 'Register',
+    }
+  }
+})
+
 const styles = StyleSheet.create({
   container: {},
   input: {
-    width: 250,
+    width: 270,
     height: 40,
     backgroundColor: 'rgba(255,255,255,0.2)',
     marginBottom: 20,
@@ -59,7 +78,7 @@ const styles = StyleSheet.create({
   quickButton: {
     backgroundColor: '#2ecc71',
     paddingVertical: 10,
-    paddingHorizontal: 15,
+    paddingHorizontal: 12,
     borderRadius: 64,
   }
 });

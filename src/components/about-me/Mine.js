@@ -15,7 +15,6 @@ class Mine extends Component {
   }
 
   _onLogin= () => {
-
     const { navigate } = this.props.navigation;
     navigate('Login');
   }
@@ -23,10 +22,9 @@ class Mine extends Component {
   render() {
     return (
         <View style={styles.container}>
-         <HeadView  loginAction={this._onLogin} />
-        <View>
-          
-        </View>
+          <HeadView  loginAction={this._onLogin} />
+          <View>
+          </View>
         </View>
     );
   }
@@ -81,7 +79,7 @@ loginContainer: {
   profile: {
     flex: 1,
     height: 40,
-    backgroundColor: '#1abc9c' 
+    backgroundColor: '#1abc9c'
   }
 
 });
@@ -100,6 +98,7 @@ const MineTab = StackNavigator({
     path: "/login",
     navigationOptions: {
       title: '登录',
+      tabBarVisible: false,
     }
   }
 },
