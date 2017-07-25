@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet, TextInput, View, Text, TouchableOpacity} from 'react-native';
 import {StackNavigator} from 'react-navigation'
 
-import Register from './register/Register'
 export default class LoginForm extends React.Component {
 
   _onRegister = () => {
@@ -37,18 +36,6 @@ export default class LoginForm extends React.Component {
     );
   }
 }
-
-export const LoginStack = StackNavigator({
-  LoginForm: {
-    screen: LoginForm,
-  },
-  Register: {
-    screen: Register,
-    navigationOptions: {
-      title: 'Register',
-    }
-  }
-})
 
 const styles = StyleSheet.create({
   container: {},

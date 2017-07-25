@@ -3,6 +3,7 @@ import { StyleSheet, Text, Image, View , ScrollView, TouchableOpacity} from 'rea
 import { StackNavigator } from 'react-navigation';
 
 import Login from '../login/Login';
+import Register from '../login/register/Register'
 
 
 class Mine extends Component {
@@ -98,6 +99,14 @@ const MineTab = StackNavigator({
     path: "/login",
     navigationOptions: {
       title: '登录',
+      tabBarVisible: false,
+    }
+  },
+  Register: {
+    screen: Register,
+    path: "/register",
+    navigationOptions: {
+      title: '注册',
       tabBarVisible: false,
     }
   }
