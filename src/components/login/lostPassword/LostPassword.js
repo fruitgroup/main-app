@@ -1,0 +1,34 @@
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TextInput,TouchableOpacity, KeyboardAvoidingView} from 'react-native';
+
+import CommonForm from '../CommonForm'
+export default class LostPassword extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+    }
+  }
+
+  render() {
+    return (
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <View style={styles.formContainer}>
+          <CommonForm />
+        </View>
+      </KeyboardAvoidingView>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#1abc9c'
+  },
+  formContainer: {
+    flexGrow: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+});

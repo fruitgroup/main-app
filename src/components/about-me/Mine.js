@@ -4,10 +4,9 @@ import { StackNavigator } from 'react-navigation';
 
 import Login from '../login/Login';
 import Register from '../login/register/Register'
-
+import LostPassword from '../login/lostPassword/LostPassword'
 
 class Mine extends Component {
-
 
   constructor() {
     super();
@@ -23,7 +22,7 @@ class Mine extends Component {
   render() {
     return (
         <View style={styles.container}>
-          <HeadView  loginAction={this._onLogin} />
+          <HeadView loginAction={this._onLogin} />
           <View>
           </View>
         </View>
@@ -102,6 +101,14 @@ const MineTab = StackNavigator({
       tabBarVisible: false,
     }
   },
+  Lost: {
+    screen: LostPassword,
+    path: "/lostPassword",
+    navigationOptions: {
+      title: '找回密码',
+      tabBarVisible: false,
+    }
+  },
   Register: {
     screen: Register,
     path: "/register",
@@ -109,7 +116,7 @@ const MineTab = StackNavigator({
       title: '注册',
       tabBarVisible: false,
     }
-  }
+  },
 },
   {
     initialRouteName: 'Mine',

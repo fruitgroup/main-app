@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {StyleSheet, TextInput, View, Text, TouchableOpacity} from 'react-native';
 import {StackNavigator} from 'react-navigation'
 
@@ -6,6 +6,9 @@ export default class LoginForm extends React.Component {
 
   _onRegister = () => {
     this.props.navigation.navigate('Register')
+  }
+  _onLostPassword = () => {
+    this.props.navigation.navigate('LostPassword')
   }
 
   render() {
@@ -17,7 +20,7 @@ export default class LoginForm extends React.Component {
           <TouchableOpacity onPress={this._onRegister} style={styles.button}>
             <Text style={styles.buttonText}>新用户注册</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity onPress={this._onLostPassword} style={styles.button}>
             <Text style={styles.buttonText}>找回密码</Text>
           </TouchableOpacity>
         </View>
