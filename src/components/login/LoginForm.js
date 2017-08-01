@@ -25,13 +25,13 @@ export default class LoginForm extends React.Component {
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity style={styles.wcButton}>
             <Text style={styles.buttonText}>微信登陆</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity style={styles.qqButton}>
             <Text style={styles.buttonText}>QQ登陆</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity style={styles.apButton}>
             <Text style={styles.buttonText}>支付宝登陆</Text>
           </TouchableOpacity>
         </View>
@@ -65,8 +65,20 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontWeight: '700',
   },
-  quickButton: {
-    backgroundColor: '#2ecc71',
+  wcButton: {
+    backgroundColor: '#7bb32e',
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderRadius: 64,
+  },
+  apButton: {
+    backgroundColor: '#0e9dec',
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderRadius: 64,
+  },
+  qqButton: {
+    backgroundColor: '#0e9dec',
     paddingVertical: 10,
     paddingHorizontal: 12,
     borderRadius: 64,
