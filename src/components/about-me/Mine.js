@@ -5,6 +5,7 @@ import { StackNavigator } from 'react-navigation';
 import Login from '../login/Login';
 import Register from '../login/register/Register'
 import LostPassword from '../login/lostPassword/LostPassword'
+import About from './About.js'
 
 class Mine extends Component {
 
@@ -19,10 +20,15 @@ class Mine extends Component {
     navigate('Login');
   }
 
+  _onAbout= () => {
+    const { navigate } = this.props.navigation;
+    navigate('About');
+  }
+
   render() {
     return (
         <View style={styles.container}>
-          <HeadView loginAction={this._onLogin} />
+          <HeadView aboutAction={this._onAbout} loginAction={this._onLogin}  />
           <View>
           </View>
         </View>
@@ -31,11 +37,13 @@ class Mine extends Component {
 
 }
 
-const HeadView = ({ loginAction }) => {
+const HeadView = ({ loginAction, aboutAction }) => {
   return (
     <View style={styles.header}>
       <Text  style={{color: 'white', fontSize: 16}}> 我的</Text>
-      <Image style={styles.userImage} />
+      <TouchableOpacity activeOpacity={0.75} style={styles.user} onPress={aboutAction}>
+        <Image style={styles.userImage} />
+      </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.75} style={styles.loginContainer} onPress={loginAction}>
       <Text  style={{color: 'white'}}> 点击登录</Text>
       </TouchableOpacity>
@@ -101,7 +109,15 @@ const MineTab = StackNavigator({
       tabBarVisible: false,
     }
   },
-  Lost: {
+  About: {
+    screen: About,
+    path: "/about",
+    navigationOptions: {
+      title: '关于自己',
+      tabBarVisible: false,
+    }
+  },
+  LostPassword: {
     screen: LostPassword,
     path: "/lostPassword",
     navigationOptions: {

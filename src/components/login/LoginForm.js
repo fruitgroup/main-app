@@ -4,11 +4,12 @@ import {StackNavigator} from 'react-navigation'
 
 export default class LoginForm extends React.Component {
 
-  _onRegister = () => {
-    this.props.navigation.navigate('Register')
-  }
   _onLostPassword = () => {
     this.props.navigation.navigate('LostPassword')
+  }
+
+  _onRegister = () => {
+    this.props.navigation.navigate('Register')
   }
 
   render() {
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
     borderRadius: 64,
   },
   qqButton: {
-    backgroundColor: '#0e9dec',
+    backgroundColor: '#003c8b',
     paddingVertical: 10,
     paddingHorizontal: 12,
     borderRadius: 64,
