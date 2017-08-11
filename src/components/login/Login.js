@@ -24,7 +24,7 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fffccc'
+    backgroundColor: '#ECF0F1'
   },
   title: {
     color: '#FFF',

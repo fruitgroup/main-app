@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: 'rgba(255,255,255,0.2)',
     marginBottom: 20,
-    color: '#FFF',
+    color: '#000',
     paddingHorizontal: 10
   },
   buttonContainer: {
@@ -67,21 +67,27 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   wcButton: {
-    backgroundColor: '#7bb32e',
+    backgroundColor: '#2ecc71',
     paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: 15,
     borderRadius: 64,
+    marginLeft: 5,
+    marginRight: 5,
   },
   apButton: {
-    backgroundColor: '#0e9dec',
+    backgroundColor: '#3498DB',
     paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: 15,
     borderRadius: 64,
+    marginLeft: 5,
+    marginRight: 5,
   },
   qqButton: {
-    backgroundColor: '#003c8b',
+    backgroundColor: '#2980B9',
     paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: 15,
     borderRadius: 64,
+       marginLeft: 5,
+    marginRight: 5,
   }
 });
