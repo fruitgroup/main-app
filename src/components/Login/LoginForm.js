@@ -16,13 +16,13 @@ export default class LoginForm extends React.Component {
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity style={styles.quickButtonWeChat}>
             <Text style={styles.buttonText}>WeChat</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity style={styles.quickButtonQQ}>
             <Text style={styles.buttonText}>QQ</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.quickButton}>
+          <TouchableOpacity style={styles.quickButtonAlipay}>
             <Text style={styles.buttonText}>Alipay</Text>
           </TouchableOpacity>
         </View>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: 'rgba(255,255,255,0.2)',
     marginBottom: 20,
-    color: '#FFF',
+    color: '#000',
     paddingHorizontal: 10
   },
   buttonContainer: {
@@ -56,8 +56,20 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontWeight: '700',
   },
-  quickButton: {
+ quickButtonWeChat: {
     backgroundColor: '#2ecc71',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 64,
+  },
+   quickButtonQQ: {
+    backgroundColor: '#2980B9',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 64,
+  }, 
+  quickButtonAlipay: {
+    backgroundColor: '#3498DB',
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 64,
