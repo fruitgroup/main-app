@@ -16,7 +16,7 @@ const Tabs = TabNavigator(
                 title: 'Welcome',
                 tabBarLabel: '首页',
                 tabBarIcon: ({ tintColor,focused }) => {
-                    <Image style={[styles.icon, { tintColor: tintColor }]} source={require('../../../assets/icons/app.png')} />
+                    return <Image style={[styles.icon, { tintColor: tintColor }]} source={require('../../../assets/icons/icon_bottomtag_home_n.png')} />
                 },
             }
         },
@@ -26,7 +26,7 @@ const Tabs = TabNavigator(
             navigationOptions: {
                 tabBarLabel: '+关注',
                 tabBarIcon: ({ tintColor, focused }) => {
-                    <Image style={[styles.icon, { tintColor: tintColor }]} source={require('../../../assets/icons/app.png')} />
+                    return <Image style={[styles.icon, { tintColor: tintColor }]} source={require('../../../assets/icons/icon_bottomtag_market_n.png')} />
                 }
             }
         },
@@ -37,7 +37,7 @@ const Tabs = TabNavigator(
             navigationOptions: {
                 tabBarLabel: '购物车',
                 tabBarIcon: ({ tintColor, focused }) => {
-                    <Image style={[styles.icon, { tintColor: tintColor }]} source={require('../../../assets/icons/app.png')} />
+                    return <Image style={[styles.icon, { tintColor: tintColor }]} source={require('../../../assets/icons/icon_bottomtag_cart_n.png')} />
                 }
             }
         },
@@ -47,7 +47,7 @@ const Tabs = TabNavigator(
             navigationOptions: {
                 tabBarLabel: '我的',
                 tabBarIcon: ({ tintColor, focused }) => {
-                    <Image style={[styles.icon, { tintColor: tintColor }]} source={require('../../../assets/icons/app.png')} />
+                    return <Image style={[styles.icon, { tintColor: tintColor }]} source={require('../../../assets/icons/icon_bottomtag_me_n.png')} />
                 }
             }
         },
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     icon: {
         width: 30,
         height: 30,
-        backgroundColor: 'red'
     },
 });
 export default Tabs;
