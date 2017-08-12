@@ -5,7 +5,8 @@ import { StackNavigator } from 'react-navigation';
 import Login from '../login/Login';
 import Register from '../login/register/Register'
 import LostPassword from '../login/lostPassword/LostPassword'
-import About from './About.js'
+import About from './About'
+import ProfileListCell from './ProfileListCell'
 
 class Mine extends Component {
 
@@ -28,9 +29,15 @@ class Mine extends Component {
   render() {
     return (
         <View style={styles.container}>
+
           <HeadView aboutAction={this._onAbout} loginAction={this._onLogin}  />
-          <View>
+
+          <View style={styles.bodyContainer}>
+            <ProfileListCell image={require('../../../assets/icons/ic_left_addr.png')} title={"地址管理"} />
+            <ProfileListCell image={require('../../../assets/icons/ic_left_order.png')} title={"我的订单"} />
+            <ProfileListCell image={require('../../../assets/icons/ic_left_setting.png')} title={"设置"} />
           </View>
+
         </View>
     );
   }
@@ -40,27 +47,23 @@ class Mine extends Component {
 const HeadView = ({ loginAction, aboutAction }) => {
   return (
     <View style={styles.header}>
-      <Text  style={{color: 'white', fontSize: 16}}> 我的</Text>
+      <Text  style={{color: 'white', fontSize: 16}}>我的</Text>
       <TouchableOpacity activeOpacity={0.75} style={styles.user} onPress={aboutAction}>
-        <Image style={styles.userImage} />
+        <Image style={styles.userImage} source = {require('../../../assets/icons/ic_avatar.png')}/>
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.75} style={styles.loginContainer} onPress={loginAction}>
-      <Text  style={{color: 'white'}}> 点击登录</Text>
+      <Text  style={{color: 'white'}}>点击登录</Text>
       </TouchableOpacity>
     </View>
   )
 };
 
-const ProfileStaticCell = ({ pro }) => {
-  return (
-    <View> </View>
-  )
-};
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: '#F5F5F5',
   },
 loginContainer: {
   borderWidth: 1,
@@ -75,12 +78,13 @@ loginContainer: {
     alignItems: 'center',
     justifyContent: 'center'
   },
-
+  bodyContainer: {
+    height: 180,
+    justifyContent: 'space-around'
+  },
   userImage: {
     width: 90,
     height: 90,
-    backgroundColor: 'gray',
-    borderRadius: 45,
     margin: 10
   },
 

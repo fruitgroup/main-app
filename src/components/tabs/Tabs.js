@@ -61,8 +61,8 @@ const Tabs = TabNavigator(
 
 const styles = StyleSheet.create({
     icon: {
-        width: 30,
-        height: 30,
+        width: 22,
+        height: 22,
     },
 });
 export default Tabs;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput,TouchableOpacity, KeyboardAvoidingView} from 'react-native';
+import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView} from 'react-native';
 
 import CommonForm from '../CommonForm'
 export default class Register extends React.Component {
